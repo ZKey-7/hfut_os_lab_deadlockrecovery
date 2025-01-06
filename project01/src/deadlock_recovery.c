@@ -531,7 +531,7 @@ void generate_deadlock_state(SystemStatus *Graph, int process_num, int resource_
         {
             int next = (i + 1) % process_num; // 下一个进程，当i=process_num-1时，next=0
             // 进程i持有一些进程next需要的资源
-            // 0-> n -> n - 1 -> n - 2 -> ... -> 1 -> 0 循环等待条件
+            // 0->  n - 1 -> n - 2 -> ... -> 1 -> 0 循环等待条件
             for (int j = 0; j < resource_num; j++)
             {
                 // 确保分配的资源总量不超过最大值
